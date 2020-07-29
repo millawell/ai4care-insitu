@@ -31,11 +31,10 @@ def main(predictions, groundtruth):
     for (_,pred), (_,true) in zip(predictions.iterrows(), groundtruth.iterrows()):
         scores.append(
             len(set(pred["Mitarbeiter ID"]) & set(true["Mitarbeiter ID"]))
-            / len(set(true["Mitarbeiter ID"]))
+            / len(set(pred["Mitarbeiter ID"]) | set(true["Mitarbeiter ID"]))
         )
 
-    print("top {} accuarcy: {:.5f}".format(
-        config.predict_top_k,
+    print("accuarcy: {:.5f}".format(
         np.mean(scores)
     ))
 
