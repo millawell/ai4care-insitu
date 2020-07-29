@@ -10,11 +10,11 @@ Creates three files:
 
 ## `python train.py -t ../data/train.tsv -p ../data/test_publish.tsv -o ../data/predictions.tsv`
 
-Train a dummy model and creates a file:
+Train a dummy model and create a file:
 * predictions.tsv
 Submit your own `train.py` file that has the same signature. (For example by making a copy and just modify the `train` method).
 
-## `touch evaluate.py -p ../data/predictions.tsv -t ../data/test_truth.tsv`
+## `python evaluate.py -p ../data/predictions.tsv -t ../data/test_truth.tsv`
 
 Evaluate the predictions from the model (comparing predictions.tsv and test_truth.tsv).
 
@@ -71,3 +71,4 @@ Whether the day "Tag" is a holiday in the given postal code.
 This is the label that is supposed to predicted during the Datathon.
 `JSON list of ints`  
 A list of identifiers of workers that have been offered.
+
