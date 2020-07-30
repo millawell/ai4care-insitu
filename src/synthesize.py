@@ -109,7 +109,7 @@ def main(outdir):
         match, = (match_active & match_quali & match_jobsite).nonzero()
 
         offers.append(
-            match[:6]
+            match[:6].tolist()
         )
         if len(offers[-1]) == 0:
 
@@ -118,7 +118,7 @@ def main(outdir):
                 np.random.choice(
                     range(1,7),
                     p=ps
-            ))
+            )).tolist()
 
     berlin_holidays = holidays.DE(prov="BE")
 

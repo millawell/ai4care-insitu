@@ -29,7 +29,7 @@ class Model:
             "Qualifikationgruppe"
         ])
 
-        self.num_offers = 4 ##int(self.data["Mitarbeiter ID"].apply(len).mean())
+        self.num_offers = int(self.data["Mitarbeiter ID"].apply(len).mean())
         
         return self
 
