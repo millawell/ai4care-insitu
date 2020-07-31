@@ -144,7 +144,8 @@ def main(trainset, testset, output):
 
     testset.loc[:, "Tag"] = testset["Tag"].apply(date.fromisoformat)
     testset.loc[:, "Tag"] = testset.Tag.apply(lambda d: (d - min_day).days)
-
+	trainset.drop(['Unnamed: 0','X.1','X'],axis=1,inplace=True) # remove weird columns from preprocessing of training data 
+    
 
     model = train(trainset)
     predictionsprob = model.predict_proba(testset)
